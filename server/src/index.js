@@ -1,6 +1,6 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
 import { corsDefaults } from "./utils/constants.js";
 import db from "./models/db.js";
 import { router as crosshairsRoute } from "./routes/index.js";

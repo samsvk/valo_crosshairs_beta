@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import Crosshair from "../models/crosshair.js";
 
 export const getAll = async (req, res) => {
