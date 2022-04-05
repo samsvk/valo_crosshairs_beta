@@ -3,3 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background: #171717;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.main {
+  max-width: 1650px;
+  margin: 0 auto;
+  width: 100%;
+  background: orange;
+}
