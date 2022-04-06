@@ -9,4 +9,13 @@ const getCrosshairs = async (page) => {
   }
 };
 
-export { getCrosshairs };
+const getCrosshairBySearch = async (name) => {
+  try {
+    const { data } = await api.getCrosshairBySearch(name);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { getCrosshairs, getCrosshairBySearch };

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getCrosshairs } from "../Data/Api/actions";
+import { getCrosshairs, getCrosshairBySearch } from "../Data/Api/actions";
 import useRender from "../Utils/useRender";
 import Crosshair from "./Crosshair";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,13 @@ export default () => {
   const [crosshairs, setCrosshairs] = React.useState([]);
 
   React.useEffect(() => {
+    if (search) {
+      getCrosshairBySearch(search).then((res) => {
+        setCrosshairs(res);
+      });
+      return;
+    }
+
     if (page) {
       getCrosshairs(page).then((res) => {
         setCrosshairs(res);
@@ -24,15 +31,9 @@ export default () => {
           return Navigate("/");
         }
       });
+      return;
     }
-  }, [page]);
-
-  // React.useEffect(() => {
-  //   if (search) {
-  //     getCrosshairBySearch(search).then((res) => setCrosshairs(res));
-  //     Navigate(`/dashboard?search=${search}`);
-  //   }
-  // }, [search]);
+  }, [page, search]);
 
   useRender("App");
   return (
