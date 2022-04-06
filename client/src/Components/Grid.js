@@ -1,6 +1,7 @@
 import * as React from "react";
 import { getCrosshairs } from "../Data/Api/actions";
 import useRender from "../Utils/useRender";
+import Crosshair from "./Crosshair";
 
 export default () => {
   const [crosshairs, setCrosshairs] = React.useState([]);
@@ -12,9 +13,11 @@ export default () => {
   }, []);
 
   useRender("App");
-  // console.log(crosshairs);
-  // console.log(crosshairs?.data?.map((item) => item.title));
   return (
-    <div className="main">{crosshairs?.data?.map((item) => item.title)}</div>
+    <div className="crosshair__grid">
+      {crosshairs?.data?.map((crosshair, index) => (
+        <Crosshair key={index} crosshair={crosshair} />
+      ))}
+    </div>
   );
 };
