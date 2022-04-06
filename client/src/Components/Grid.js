@@ -12,6 +12,9 @@ export default () => {
   }, []);
 
   useRender("App");
-
-  return <div className="main">vvvv111</div>;
+  // console.log(crosshairs);
+  // console.log(crosshairs?.data?.map((item) => item.title));
+  return (
+    <div className="main">{crosshairs?.data?.map((item) => item.title)}</div>
+  );
 };
