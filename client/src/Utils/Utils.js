@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 export const copyToClipboard = (arg) =>
   navigator.clipboard
     .writeText(`${arg}`)
@@ -6,3 +7,5 @@ export const copyToClipboard = (arg) =>
 
 export const sleep = async (ms) =>
   new Promise((resolve) => setTimeout(resolve, ms));
+
+export const useQuery = () => new URLSearchParams(useLocation().search);

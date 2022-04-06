@@ -1,4 +1,6 @@
-export default () => {
+import React from "react";
+
+export default React.memo(() => {
   return (
     <header className="header">
       <h1>Crosshairs.gg</h1>
@@ -10,4 +12,4 @@ export default () => {
       </p>
     </header>
   );
-};
+});
