@@ -1,4 +1,5 @@
 @mixin Paragraph {
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   color: black;
   font-weight: 500;
@@ -16,8 +17,6 @@ body {
   color: black;
 }
 .crosshair__grid {
-  // padding: 1rem;
-  // max-width: 1300px;
   margin: 0 auto;
   display: grid;
   width: 100%;
@@ -46,7 +45,6 @@ body {
   min-height: 185px;
   position: relative;
   border-radius: 4px;
-
   align-items: center;
   background: #fdfdfd;
   flex-direction: column;
@@ -139,19 +137,29 @@ body {
   margin: 0 auto;
   margin-top: 4em;
   margin-bottom: 2em;
-  & > h1 {
-    font-size: 3.2em;
-    font-weight: 900;
-    letter-spacing: 0;
-    color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  & > div {
+    flex: 1;
+    & > h1 {
+      font-size: 3.2em;
+      font-weight: 900;
+      letter-spacing: 0;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    & > p {
+      @include Paragraph;
+      margin-top: 0.5rem;
+      opacity: 0.5;
+      max-width: 540px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
   }
-  & > p {
-    @include Paragraph;
-    margin-top: 0.5rem;
-    opacity: 0.5;
-    max-width: 540px;
-    font-weight: 400;
-    line-height: 1.5;
+  &__bottom {
+    align-self: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;
   }
 }
 .container {
@@ -163,7 +171,6 @@ body {
   display: flex;
   width: auto;
   margin-top: 1rem;
-  // border-radius: 1px;
   align-items: flex-start;
   justify-content: flex-start;
   width: max-content;
@@ -260,5 +267,72 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+}
+
+.search__container {
+  min-width: 185px;
+  max-width: 300px;
+  width: 100%;
+  display: block;
+  display: flex;
+  border-radius: 6px;
+  background: #fdfdfd;
+  border: 1px solid RGBA(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.01), 0 3px 15px 0 rgba(0, 0, 0, 0.01);
+  &__close {
+    height: 100%;
+    padding: 0 0.5rem;
+    display: flex;
+    color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__input {
+    padding: 0 0.6rem;
+    min-height: 28px;
+    outline: 0;
+    border: 0;
+    width: 90%;
+    background: transparent;
+    @include Paragraph;
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: 500;
+    &::placeholder {
+      @include Paragraph;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+  &__button {
+    z-index: 10;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.1em;
+    align-self: center;
+    background: transparent;
+    outline: none;
+    border: none;
+    height: 100%;
+    width: fit-content;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid RGBA(0, 0, 0, 0.05);
+    padding: 0 0.5rem;
+    &:hover {
+      cursor: pointer;
+      color: $brand-dark;
+      & > svg {
+        color: RGBA(0, 0, 0, 0.4);
+      }
+    }
+    & > svg {
+      transition: color 0.3s ease;
+      vertical-align: middle;
+      color: RGBA(0, 0, 0, 0.1);
+    }
   }
 }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import useRender from "../Utils/useRender";
 import { copyToClipboard, sleep } from "../Utils/Utils";
 
 export default React.memo(({ crosshair }) => {
