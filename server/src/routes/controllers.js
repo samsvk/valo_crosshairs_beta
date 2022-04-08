@@ -1,6 +1,6 @@
 import Crosshair from "../models/crosshair.js";
 
-export const getAll = async (req, res) => {
+const getAll = async (req, res) => {
   const { page } = req.query;
   const LIMIT = 20;
   const startIndex = (Number(page) - 1) * LIMIT;
@@ -16,7 +16,7 @@ export const getAll = async (req, res) => {
   });
 };
 
-export const createCrosshair = async (req, res) => {
+const createCrosshair = async (req, res) => {
   const post = req.body;
   const newCrosshair = new Crosshair({
     ...post,
@@ -29,3 +29,18 @@ export const createCrosshair = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
+
+const searchCrosshair = async (req, res) => {
+  const { search } = req.query;
+  try {
+    const title = new RegExp(search, "i");
+    const posts = await Crosshair.find({
+      $or: [{ title }],
+    });
+    res.json({ data: posts });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export { getAll, searchCrosshair, createCrosshair };
