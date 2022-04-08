@@ -1,6 +1,9 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import { getCrosshairByColor } from "../Data/Api/actions";
 
 export default () => {
+  const Navigate = useNavigate();
   const colors = [
     { color: "white", hex: "ffffff" },
     { color: "green", hex: "00ff00" },
@@ -28,7 +31,10 @@ export default () => {
             <ul>
               {colors.map((clr, index) => (
                 <li
-                  onClick={() => setColor(clr)}
+                  onClick={() => {
+                    setColor(clr);
+                    Navigate(`/?search=${clr.color}`);
+                  }}
                   style={{ backgroundColor: `#${clr.hex}` }}
                   className={`color__selector__item ${clr.color}`}
                   key={index}
