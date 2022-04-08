@@ -7,7 +7,7 @@ export default () => {
   const Navigate = useNavigate();
 
   function handleCancel() {
-    if (inputRef.current.value === "") Navigate(`/`);
+    Navigate(`/`);
     inputRef.current.value = "";
   }
 
