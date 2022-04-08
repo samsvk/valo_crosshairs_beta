@@ -7,7 +7,7 @@ export default () => {
   const Navigate = useNavigate();
 
   function handleCancel() {
-    Navigate(`/`);
+    if (inputRef.current.value === "") Navigate(`/`);
     inputRef.current.value = "";
   }
 
@@ -17,6 +17,7 @@ export default () => {
         className="search__container"
         onSubmit={(e) => {
           e.preventDefault();
+          if (inputRef.current.value === "") return;
           return Navigate(`/?search=${inputRef.current.value}`);
         }}
       >

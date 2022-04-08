@@ -1,11 +1,11 @@
 import * as React from "react";
 import { getCrosshairs, getCrosshairBySearch } from "../Data/Api/actions";
-import useRender from "../Utils/useRender";
 import Crosshair from "./Crosshair";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "../Utils/Utils";
 import { Paginate } from "./Paginate";
 import Header from "../Components/Header";
+import useRender from "../Utils/useRender";
 
 export default () => {
   const Navigate = useNavigate();
@@ -35,7 +35,7 @@ export default () => {
     }
   }, [page, search]);
 
-  useRender("App");
+  // useRender("App");
   return (
     <div className="container">
       <Header />
