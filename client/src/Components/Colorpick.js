@@ -22,7 +22,7 @@ export default () => {
     <div className="color">
       {open && (
         <>
-          <div className="color__selector">
+          <div className="color__selector" onMouseLeave={() => setOpen(false)}>
             <div className="color__selector__hex">
               <p>HEX</p>
               <div className="color__selector__hex__label">#{color.hex}</div>

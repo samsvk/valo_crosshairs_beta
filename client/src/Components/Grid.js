@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  getCrosshairs,
-  getCrosshairBySearch,
-  getCrosshairByColor,
-} from "../Data/Api/actions";
+import { getCrosshairs, getCrosshairBySearch } from "../Data/Api/actions";
 import Crosshair from "./Crosshair";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "../Utils/Utils";
@@ -51,7 +47,10 @@ export default () => {
           </div>
         </>
       ) : (
-        "No results..."
+        <div className="noresults">
+          No results found using filter:{" "}
+          {search?.charAt(0).toUpperCase() + search?.slice(1)}
+        </div>
       )}
 
       <Paginate

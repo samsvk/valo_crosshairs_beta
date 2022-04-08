@@ -439,6 +439,9 @@ body {
       width: 16px;
       border-radius: 50%;
       background: black;
+      &:hover {
+        cursor: pointer;
+      }
     }
     & > ul {
       display: flex;
@@ -457,4 +460,12 @@ body {
       cursor: pointer;
     }
   }
+}
+.noresults {
+  @include Paragraph;
+  margin-top: 0.5rem;
+  opacity: 0.5;
+  max-width: 540px;
+  font-weight: 400;
+  line-height: 1.5;
 }
