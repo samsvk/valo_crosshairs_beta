@@ -383,11 +383,39 @@ body {
   align-items: center;
   justify-content: center;
   &__selector {
+    &__hex {
+      width: 100%;
+      padding: 0 0.5rem;
+      &__label {
+        border: 1px solid RGBA(0, 0, 0, 0.05);
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.01),
+          0 3px 15px 0 rgba(0, 0, 0, 0.01);
+        min-height: 15px;
+        width: 100%;
+        background: $white-100;
+        @include Paragraph;
+        margin-top: 0.15rem;
+        margin-bottom: 0.15rem;
+        opacity: 0.5;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 10px;
+        font-weight: 500;
+      }
+      & > p {
+        @include Paragraph;
+        opacity: 0.5;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 10px;
+        font-weight: 500;
+      }
+    }
     padding: 0.5rem;
-    gap: 0.5rem;
+    gap: 0.25rem;
     position: absolute;
     z-index: 100;
-    top: -2rem;
+    top: -5rem;
     border-radius: 6px;
     background: #fdfdfd;
     border: 1px solid RGBA(0, 0, 0, 0.05);
@@ -396,17 +424,17 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    max-height: 27px;
     display: inline-flex;
     width: max-content;
     left: 50%;
     transform: translate(-50%, 0%);
     margin-left: auto;
     margin-right: auto;
+    flex-direction: column;
     &__item {
       box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.04),
         0 2px 3px 0 rgba(0, 0, 0, 0.04);
-      border: 1px solid RGBA(0, 0, 0, 0.05);
+      border: 1px solid RGBA(0, 25, 0, 0.3);
       height: 16px;
       width: 16px;
       border-radius: 50%;
@@ -414,7 +442,7 @@ body {
     }
     & > ul {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.35rem;
       list-style: none;
       width: max-content;
     }
