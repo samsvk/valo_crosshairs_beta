@@ -42,11 +42,17 @@ export default () => {
   return (
     <div className="container">
       <Header />
-      <div className="crosshair__grid">
-        {crosshairs?.data?.map((crosshair, index) => (
-          <Crosshair key={index} crosshair={crosshair} />
-        ))}
-      </div>
+      {crosshairs?.data?.length > 0 ? (
+        <>
+          <div className="crosshair__grid">
+            {crosshairs?.data?.map((crosshair, index) => (
+              <Crosshair key={index} crosshair={crosshair} />
+            ))}
+          </div>
+        </>
+      ) : (
+        "No results..."
+      )}
 
       <Paginate
         numberOfPages={crosshairs.numberOfPages}

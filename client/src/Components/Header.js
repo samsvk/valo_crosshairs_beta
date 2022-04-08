@@ -3,6 +3,7 @@ import Search from "./Search";
 import { AiOutlineGithub } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Color from "./Colorpick";
+
 export default React.memo(() => {
   return (
     <>

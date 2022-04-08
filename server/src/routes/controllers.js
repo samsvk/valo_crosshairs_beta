@@ -34,14 +34,9 @@ const searchCrosshair = async (req, res) => {
   const { search } = req.query;
   try {
     const title = new RegExp(search, "i");
-    // const posts = await Crosshair.find({
-    //   $or: [{ title }],
-    // });
-
     const posts = await Crosshair.find({
       $or: [{ title }, { color: title }],
     });
-    console.log(posts);
     res.json({ data: posts });
   } catch (error) {
     res.status(404).json({ message: error.message });

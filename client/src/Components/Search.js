@@ -26,14 +26,14 @@ export default () => {
           className="search__container__input"
           placeholder="Search by player name..."
         />
-        {inputRef?.current?.value?.length > 1 && (
+        {
           <span
             className="search__container__close"
             onClick={() => handleCancel()}
           >
             <IoClose style={{ verticalAlign: "middle" }} />
           </span>
-        )}
+        }
         <button className="search__container__button" type="submit">
           <IoSearch />
         </button>

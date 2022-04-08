@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { getCrosshairByColor } from "../Data/Api/actions";
+import { IoSearch, IoClose } from "react-icons/io5";
 
 export default () => {
   const Navigate = useNavigate();
@@ -18,7 +18,6 @@ export default () => {
   const [color, setColor] = React.useState(
     colors[Math.floor(Math.random() * colors.length)]
   );
-
   return (
     <div className="color">
       {open && (
