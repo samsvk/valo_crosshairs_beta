@@ -4,6 +4,7 @@ $sub-color: #48494b;
 $sub-alt-color: #141516;
 $main-color: #79a617;
 $main-color-50: rgba(170, 196, 112, 0.08);
+$error: #a61717;
 * {
   padding: 0;
   margin: 0;
@@ -210,13 +211,32 @@ body {
         list-style: none;
         display: flex;
         gap: 1rem;
+        & > a {
+          color: $sub-color;
+          text-decoration: none;
+          & > li {
+            max-height: 18px;
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+            transition: color 0.2s ease;
+            &:hover {
+              cursor: pointer;
+              color: $text-color;
+            }
+            & > svg {
+              display: flex;
+              align-items: center;
+              margin-right: 3px;
+              vertical-align: middle;
+            }
+          }
+        }
         & > li {
-          // background: orange;
           max-height: 18px;
           display: flex;
           justify-content: center;
           font-size: 12px;
-
           transition: color 0.2s ease;
           &:hover {
             cursor: pointer;
@@ -365,7 +385,9 @@ body {
     display: flex;
     color: $sub-color;
     align-items: center;
+    transition: color 0.2s ease;
     &:hover {
+      color: $text-color;
       cursor: pointer;
     }
   }
@@ -388,7 +410,6 @@ body {
   }
   &__button {
     z-index: 10;
-    // color: rgba(0, 0, 0, 0.5);
     font-size: 1.1em;
     align-self: center;
     background: transparent;
@@ -396,7 +417,7 @@ body {
     border: none;
     height: 100%;
     width: fit-content;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
     display: flex;
     align-items: center;
     border-left: 1px solid RGBA(0, 0, 0, 0.05);
@@ -409,7 +430,7 @@ body {
     }
     & > svg {
       color: $sub-color;
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
       vertical-align: middle;
     }
   }
@@ -503,4 +524,64 @@ body {
 }
 .noresults {
   @include Paragraph;
+  color: $error;
+}
+
+.information {
+  .important__title {
+    background: $main-color-50;
+    width: max-content;
+    padding: 0.3rem 0.6rem;
+    color: $main-color;
+    border-radius: 6px;
+  }
+  max-width: 990px;
+  width: 100%;
+  margin: 5rem auto 0 auto;
+  &__header {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    & > h1 {
+      @include Title;
+      font-size: 2.4rem;
+      font-weight: 500;
+    }
+    &__github {
+      margin-bottom: -0.5rem;
+      display: flex;
+      vertical-align: middle;
+      @include Paragraph;
+      letter-spacing: 0.3px;
+      color: $main-color;
+      width: max-content;
+      font-size: 14px;
+      font-weight: 500;
+      & > span {
+        padding: 0 0.3rem 0 0.45rem;
+        align-self: center;
+      }
+    }
+  }
+
+  &__data {
+    margin: 2rem 0;
+    & > h2 {
+      @include Paragraph;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+      color: $main-color;
+      font-size: 1.5em;
+    }
+    & > p {
+      @include Paragraph;
+      line-height: 1.25;
+      color: $text-color;
+      & > span {
+        font-weight: 600;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    }
+  }
 }

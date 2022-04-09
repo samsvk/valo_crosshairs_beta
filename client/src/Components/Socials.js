@@ -1,15 +1,11 @@
 import * as React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { SiDiscord, SiTwitch } from "react-icons/si";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { RiMoneyDollarCircleFill, RiInformationFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default () => {
   const data = [
-    {
-      name: "Twitter",
-      url: "https://twitter.com/copykat",
-      icon: <AiOutlineTwitter size={16} />,
-    },
     {
       name: "Discord",
       url: "https://discord.gg/",
@@ -30,6 +26,12 @@ export default () => {
             <span>{social.name}</span>
           </li>
         ))}
+        <Link to={"/information"}>
+          <li>
+            <RiInformationFill size={16} />
+            <span>Information</span>
+          </li>
+        </Link>
       </ul>
     </div>
   );
