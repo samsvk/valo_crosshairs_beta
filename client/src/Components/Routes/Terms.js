@@ -1,48 +1,151 @@
+import { Link } from "react-router-dom";
 export default () => {
   return (
     <div className="information">
+      <Link to="/" className="information__nav">
+        {"<"} Return Home
+      </Link>
       <header className="information__header">
         <main>
           <h1>copykat</h1>
-          <p>Our promises</p>
+          <p>Terms</p>
         </main>
-        <h1 className="important__title">PRIVACY POLICY</h1>
+        <h1 className="important__title">Terms of Service</h1>
       </header>
       <div className="information__data">
-        <h2>Disclaimer / Changes to our policies.</h2>
+        <h2>Agreement</h2>
         <p>
+          By accessing this Website, accessible from Copykat.gg, you are
+          agreeing to be bound by these Website Terms of Service and agree that
+          you are responsible for the agreement in accordance with any
+          applicable local laws.
           <span>
-            if you do not agree to the terms of this agreement, you are not
-            permitted to access or use this service.
-          </span>{" "}
-          It's important to note, our service may change over time and you
-          should regularly educate yourself on our given policies. We keep our
-          privacy policy updated and under regular review. Our policy MAY be
-          subject to change at any given time witout notice.{" "}
-        </p>
-      </div>
-      <div className="information__data">
-        <h2>What data do we collect?</h2>
-        <p>
-          We believe in a lightweight product, therefore DO NOT store your
-          information.
-        </p>
-      </div>
-      <div className="information__data">
-        <h2>Privacy policies for external websites</h2>
-        <p>
-          Our website contains links to external websites. We are not
-          responsible for any contents of any linked sites. The inclusion of
-          these links does not imply endorsement by us of said site. Use of any
-          external linked website is at the users own risk(s).
+            IF YOU DO NOT AGREE TO ALL THE TERMS AND CONDITIONS OF THIS
+            AGREEMENT, YOU ARE NOT PERMITTED TO ACCESS OR USE OUR SERVICES.
+          </span>
         </p>
       </div>
 
       <div className="information__data">
-        <h2>Contact us?</h2>
+        <h2>Limitations</h2>
         <p>
-          If you have any information, questions or are concerned about our
-          website. Please contact us using our Discord help channel.
+          You are responsible for your security and all activities. In the use
+          of this site, you must NOT violate any applicable laws, including,
+          without limitation, copyright laws, or any other laws regarding the
+          security of your personal data, or otherwise misuse this site. We
+          reserves the right to remove or disable any account or any other
+          content on this site at any time for any reason, without prior notice
+          to you, if we believe that you have violated this agreement. You agree
+          that you will not upload, post, host, or transmit any content that:
+        </p>
+        <ol>
+          <li>
+            violates any person's right to privacy or publicity, or otherwise
+            solicits, collects, or publishes data, including personal
+            information and login information, about other Users without consent
+            or for unlawful purposes in violation of any applicable
+            international, federal, state, or local law, statute, ordinance, or
+            regulation.
+          </li>
+          <li>
+            contains or installs any active malware or exploits/uses our
+            platform for exploit delivery (such as part of a command or control
+            system); or infringes on any proprietary right of any party,
+            including patent, trademark, trade secret, copyright, right of
+            publicity, or other rights.
+          </li>
+          <li>is unlawful or promotes unlawful activities.</li>
+        </ol>
+        <p style={{ marginTop: "2rem" }}>
+          While using Copykats service(s), you agree that you shall and will
+          not:
+        </p>
+        <ol>
+          <li>
+            harass, abuse, threaten, or incite violence towards any individual
+            or group.
+          </li>
+          <li>
+            Access our/the Services in ways that exceed your authorization.
+          </li>
+          <li>
+            Facilitate or encourage any violations of this Agreement or
+            interfere with the operation, appearance, security, or functionality
+            of the Services or use the Services in any manner that is harmful to
+            minors.
+          </li>
+          <li>
+            Use our servers for any form of excessive automated bulk activity
+            (such as/example being: spamming), or rely on any other form of
+            unsolicited advertising or solicitation through our servers or
+            Services. Attempt to disrupt or tamper with our servers in ways that
+            could harm our website/service OR place burden upon our servers.
+          </li>
+        </ol>
+        <p style={{ marginTop: "1rem" }}>
+          Without limiting the foregoing, you will not transmit or post any
+          content anywhere on the Services that violates any laws. Copykat
+          absolutely does not tolerate engaging in activity that significantly
+          harms our Users/Serivce(s). We will resolve disputes in favor of
+          protecting our Users/Service(s) as a whole.
+        </p>
+      </div>
+
+      <div className="information__data">
+        <h2>Privacy Policy</h2>
+        <p>
+          If you use our Services, you must abide by our{" "}
+          <Link className="link" to="/privacy-policy">
+            Privacy Policy
+          </Link>
+          {". "}
+          You acknowledge that you have read our Privacy Policy and understand
+          that it sets forth how we collect, use, and store your information.{" "}
+          Any person, entity, or service collecting data from the Services must
+          comply with our Privacy Statement. Misuse of any User's Personal
+          Information is prohibited. If you collect any Personal Information
+          from a User, you agree that you will only use the Personal Information
+          you gather for the purpose for which the User has authorized it. You
+          agree that you will reasonably secure any Personal Information you
+          have gathered from the Services, and you will respond promptly to
+          complaints, removal requests, and 'do not contact' requests from us or
+          Users.
+        </p>
+      </div>
+
+      <div className="information__data">
+        <h2>Links</h2>
+        <p>
+          Copykat.gg has not reviewed all of the sites linked to its website and
+          is not responsible for the contents of any such linked site. The
+          inclusion of any link does not imply endorsement by Copykat.gg of the
+          site.{" "}
+          <span>Use of any such linked website is at the user's own risk.</span>
+        </p>
+      </div>
+
+      <div className="information__data">
+        <h2>Changes</h2>
+        <p>
+          We may revise these Terms of Service for this Website at any time
+          without prior notice. By using this Website, you are agreeing to be
+          bound by the current version of these Terms of Service.
+        </p>
+      </div>
+
+      <div className="information__data">
+        <h2>Disclaimer</h2>
+        <p>
+          The materials on Copykat.gg website are provided on an "as is" basis.
+          Copykat.gg makes no warranties, expressed or implied, and hereby
+          disclaims and negates all other warranties including, without
+          limitation, implied warranties or conditions of merchantability,
+          fitness for a particular purpose, or non-infringement of intellectual
+          property or other violation of rights. Further, Copykat.gg does not
+          warrant or make any representations concerning the accuracy, likely
+          results, or reliability of the use of the materials on its website or
+          otherwise relating to such materials or on any sites linked to this
+          site.
         </p>
       </div>
     </div>

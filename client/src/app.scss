@@ -527,6 +527,14 @@ body {
 }
 
 .information {
+  &__nav {
+    @include Paragraph;
+    color: $text-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   .important__title {
     background: $main-color-50;
     width: max-content;
@@ -542,6 +550,7 @@ body {
   width: 100%;
   margin: 5rem auto 0 auto;
   &__header {
+    margin-top: 1rem;
     margin-bottom: 3rem;
     display: flex;
     align-items: flex-end;
@@ -582,6 +591,9 @@ body {
       font-size: 1.5em;
     }
     & > p {
+      .link {
+        color: inherit;
+      }
       @include Paragraph;
       line-height: 1.25;
       color: $text-color;
@@ -589,6 +601,16 @@ body {
         font-weight: 600;
         text-decoration: underline;
         text-transform: uppercase;
+      }
+    }
+    & > ol {
+      margin-top: 1rem;
+      margin-left: 3rem;
+      list-style: decimal-leading-zero;
+      & > li {
+        @include Paragraph;
+        margin-top: 0.5rem;
+        color: $text-color;
       }
     }
   }
