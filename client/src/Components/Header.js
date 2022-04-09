@@ -3,6 +3,7 @@ import Search from "./Search";
 import { AiOutlineGithub } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Color from "./Colorpick";
+import Socials from "./Socials";
 
 export default React.memo(() => {
   return (
@@ -24,9 +25,12 @@ export default React.memo(() => {
             top professional players are using.
           </p>
         </div>
-        <div className="header__bottom">
-          <Color />
-          <Search />
+        <div className="header__aside">
+          <Socials />
+          <div className="header__aside__bottom">
+            <Color />
+            <Search />
+          </div>
         </div>
       </header>
     </>
