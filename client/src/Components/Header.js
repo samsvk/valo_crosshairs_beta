@@ -17,12 +17,11 @@ export default React.memo(() => {
       </div>
       <header className="header">
         <div>
-          <h1>Crosshair.io</h1>
+          <h1>copykat</h1>
           <p>
             Perform better with the best crosshairs. Browse and find your
-            preference. <br />
-            The leightweight crosshair directory so you can see what top
-            professional players are using.
+            preference. The leightweight crosshair directory so you can see what
+            top professional players are using.
           </p>
         </div>
         <div className="header__bottom">
