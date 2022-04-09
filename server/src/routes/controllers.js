@@ -1,10 +1,19 @@
 import Crosshair from "../models/crosshair.js";
 
+/*
+{
+  limit: number,
+  page: number,
+  data: [],  
+}
+*/
+
 const getAll = async (req, res) => {
   const { page } = req.query;
   const LIMIT = 20;
   const startIndex = (Number(page) - 1) * LIMIT;
   const total = await Crosshair.countDocuments({});
+
   const posts = await Crosshair.find()
     .sort({ _id: -1 })
     .limit(LIMIT)
@@ -37,6 +46,7 @@ const searchCrosshair = async (req, res) => {
     const posts = await Crosshair.find({
       $or: [{ title }, { color: title }],
     });
+
     res.json({ data: posts });
   } catch (error) {
     res.status(404).json({ message: error.message });
