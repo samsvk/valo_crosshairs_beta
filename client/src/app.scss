@@ -187,7 +187,7 @@ body {
       @include Title;
       font-size: 2.4rem;
       font-weight: 500;
-      margin: 0.6rem 0 0.3rem 0;
+      margin: 0.8rem 0 1rem 0;
     }
     & > p {
       @include Paragraph;
@@ -205,8 +205,31 @@ body {
       display: flex;
       align-self: flex-start;
       justify-content: flex-end;
-      // background: orange;
       width: 100%;
+      & > ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        & > li {
+          // background: orange;
+          max-height: 18px;
+          display: flex;
+          justify-content: center;
+          font-size: 12px;
+
+          transition: color 0.2s ease;
+          &:hover {
+            cursor: pointer;
+            color: $text-color;
+          }
+          & > svg {
+            display: flex;
+            align-items: center;
+            margin-right: 3px;
+            vertical-align: middle;
+          }
+        }
+      }
     }
     &__bottom {
       flex: 1;

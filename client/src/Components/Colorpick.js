@@ -14,9 +14,10 @@ export default () => {
     { color: "red", hex: "ff0000" },
   ];
   const [open, setOpen] = React.useState(false);
-  const [color, setColor] = React.useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
+  const [color, setColor] = React.useState({
+    color: "brand",
+    hex: "79a617",
+  });
   return (
     <div className="color">
       {open && (
