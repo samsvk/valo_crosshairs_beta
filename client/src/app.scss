@@ -534,6 +534,11 @@ body {
     padding: 0.3rem 0.6rem;
     color: $main-color;
     border-radius: 6px;
+    // max-height: 50px;
+    max-height: 38px;
+    margin-left: 1rem;
+    font-size: 1.3em;
+    margin-bottom: 0.3rem;
   }
   max-width: 990px;
   width: 100%;
@@ -541,25 +546,30 @@ body {
   &__header {
     margin-bottom: 3rem;
     display: flex;
-    flex-direction: column-reverse;
-    & > h1 {
-      @include Title;
-      font-size: 2.4rem;
-      font-weight: 500;
-    }
-    &__github {
-      margin-bottom: -0.5rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+    & > main {
       display: flex;
-      vertical-align: middle;
-      @include Paragraph;
-      letter-spacing: 0.3px;
-      color: $main-color;
-      width: max-content;
-      font-size: 14px;
-      font-weight: 500;
-      & > span {
-        padding: 0 0.3rem 0 0.45rem;
-        align-self: center;
+      flex-direction: column-reverse;
+      & > h1 {
+        @include Title;
+        font-size: 2.4rem;
+        font-weight: 500;
+      }
+      & > p {
+        margin-bottom: -0.5rem;
+        display: flex;
+        vertical-align: middle;
+        @include Paragraph;
+        letter-spacing: 0.3px;
+        color: $main-color;
+        width: max-content;
+        font-size: 14px;
+        font-weight: 500;
+        & > span {
+          padding: 0 0.3rem 0 0.45rem;
+          align-self: center;
+        }
       }
     }
   }

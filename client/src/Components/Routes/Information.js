@@ -2,10 +2,12 @@ export default () => {
   return (
     <div className="information">
       <header className="information__header">
-        <h1>copykat</h1>
-        <p className="information__header__github">Our promises</p>
+        <main>
+          <h1>copykat</h1>
+          <p>Our promises</p>
+        </main>
+        <h1 className="important__title">PRIVACY POLICY</h1>
       </header>
-      <h1 className="important__title">PRIVACY POLICY</h1>
       <div className="information__data">
         <h2>Disclaimer / Changes to our policies.</h2>
         <p>
@@ -24,16 +26,6 @@ export default () => {
         <p>
           We believe in a lightweight product, therefore DO NOT store your
           information.
-        </p>
-      </div>
-      <div className="information__data">
-        <h2>What are cookies?</h2>
-        <p>
-          Cookies are text files placed on your computer to collect standard
-          Internet log information and visitor behavior information. When you
-          visit our websites, we may collect information from you automatically
-          through cookies or similar technology for further information, visit
-          www.wikipedia.org/wiki/HTTP_cookie
         </p>
       </div>
       <div className="information__data">

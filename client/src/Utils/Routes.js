@@ -4,6 +4,6 @@ const Error = () => <div>404</div>;
 
 export default [
   { path: "/", name: "Dashboard", Component: Dashboard },
-  { path: "/information", name: "Information", Component: Information },
+  { path: "/privacy-policy", name: "Information", Component: Information },
   { path: "*", name: "", Component: Error },
 ];

@@ -1,6 +1,5 @@
 import * as React from "react";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { SiDiscord, SiTwitch } from "react-icons/si";
+import { SiDiscord } from "react-icons/si";
 import { RiMoneyDollarCircleFill, RiInformationFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
@@ -26,7 +25,7 @@ export default () => {
             <span>{social.name}</span>
           </li>
         ))}
-        <Link to={"/information"}>
+        <Link to={"/privacy-policy"}>
           <li>
             <RiInformationFill size={16} />
             <span>Information</span>
