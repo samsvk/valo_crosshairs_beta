@@ -1,7 +1,8 @@
 import * as React from "react";
 import { SiDiscord } from "react-icons/si";
-import { RiMoneyDollarCircleFill, RiInformationFill } from "react-icons/ri";
+import { RiMoneyDollarCircleFill, RiFileFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { BiShieldQuarter } from "react-icons/bi";
 
 export default () => {
   const data = [
@@ -27,8 +28,14 @@ export default () => {
         ))}
         <Link to={"/privacy-policy"}>
           <li>
-            <RiInformationFill size={16} />
-            <span>Information</span>
+            <BiShieldQuarter size={16} />
+            <span>Privacy</span>
+          </li>
+        </Link>
+        <Link to={"/terms-of-service"}>
+          <li>
+            <RiFileFill size={16} />
+            <span>Terms</span>
           </li>
         </Link>
       </ul>
