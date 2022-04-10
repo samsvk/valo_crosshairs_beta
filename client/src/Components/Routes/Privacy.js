@@ -29,29 +29,25 @@ export default () => {
         <h2>What data do we collect?</h2>
         <p>
           For a better experience while using our Service, we may require you to
-          provide us with certain personally identifiable information, including
-          but not limited to your twitch username, twitch id and twitch profile
-          picture be used to identify you within services hosted here.
+          provide us with certain personally identifiable information.
         </p>
       </div>
       <div className="information__data">
         <h2>Cookies</h2>
         <p>
           There are a number of different types of cookies; however, our website
-          uses functionality cookies. We use these cookies for the following:
+          uses no cookies during this current iteration of development.
         </p>
-        <ol>
-          <li>Keeping you logged/signed in.</li>
-        </ol>
         <p style={{ marginTop: "1rem" }}>
-          You can set your browser to declined cookies, and below website tells
-          you how to remove cookies from your browser. However, it is likely our
+          You can set your browser to decline cookies, and below website tells
+          you how to remove cookies from your browser.
+          {/* However, it is likely our
           features will fail/behave unexpectedly as a result of cookies being
-          disabled.
+          disabled. */}
         </p>
         <p style={{ marginTop: "1rem" }}>
           Further information regarding cookies:{" "}
-          <a className="link" href="www.wikipedia.org/wiki/HTTP_cookie">
+          <a className="link" href="https://www.wikipedia.org/wiki/HTTP_cookie">
             www.wikipedia.org/wiki/HTTP_cookie
           </a>
         </p>
@@ -74,8 +70,8 @@ export default () => {
       <div className="information__data">
         <h2>Security</h2>
         <p>
-          We value your trust in providing us your Personal Information, thus we
-          are striving to use industry standard means of protecting it. But
+          We value your trust in using our website/service(s), thus we are
+          striving to use industry standard means of protecting you. But
           remember that no method of transmission over the internet, or method
           of electronic storage is 100% secure and reliable, and we cannot
           guarantee absolute security.

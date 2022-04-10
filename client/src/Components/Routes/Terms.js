@@ -18,7 +18,7 @@ export default () => {
           By accessing this Website, accessible from Copykat.gg, you are
           agreeing to be bound by these Website Terms of Service and agree that
           you are responsible for the agreement in accordance with any
-          applicable local laws.
+          applicable local laws.{" "}
           <span>
             IF YOU DO NOT AGREE TO ALL THE TERMS AND CONDITIONS OF THIS
             AGREEMENT, YOU ARE NOT PERMITTED TO ACCESS OR USE OUR SERVICES.
@@ -32,41 +32,19 @@ export default () => {
           You are responsible for your security and all activities. In the use
           of this site, you must NOT violate any applicable laws, including,
           without limitation, copyright laws, or any other laws regarding the
-          security of your personal data, or otherwise misuse this site. We
-          reserves the right to remove or disable any account or any other
-          content on this site at any time for any reason, without prior notice
-          to you, if we believe that you have violated this agreement. You agree
-          that you will not upload, post, host, or transmit any content that:
+          security of your personal data, or otherwise misuse this site.
         </p>
-        <ol>
-          <li>
-            violates any person's right to privacy or publicity, or otherwise
-            solicits, collects, or publishes data, including personal
-            information and login information, about other Users without consent
-            or for unlawful purposes in violation of any applicable
-            international, federal, state, or local law, statute, ordinance, or
-            regulation.
-          </li>
-          <li>
-            contains or installs any active malware or exploits/uses our
-            platform for exploit delivery (such as part of a command or control
-            system); or infringes on any proprietary right of any party,
-            including patent, trademark, trade secret, copyright, right of
-            publicity, or other rights.
-          </li>
-          <li>is unlawful or promotes unlawful activities.</li>
-        </ol>
-        <p style={{ marginTop: "2rem" }}>
+        <p style={{ marginTop: "1rem" }}>
           While using Copykats service(s), you agree that you shall and will
           not:
         </p>
         <ol>
           <li>
-            harass, abuse, threaten, or incite violence towards any individual
+            Harass, abuse, threaten, or incite violence towards any individual
             or group.
           </li>
           <li>
-            Access our/the Services in ways that exceed your authorization.
+            Access our/the services in ways that exceed your authorization.
           </li>
           <li>
             Facilitate or encourage any violations of this Agreement or
