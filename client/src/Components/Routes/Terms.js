@@ -35,14 +35,9 @@ export default () => {
           security of your personal data, or otherwise misuse this site.
         </p>
         <p style={{ marginTop: "1rem" }}>
-          While using Copykats service(s), you agree that you shall and will
-          not:
+          While using Copykat.gg, you agree that you shall not:
         </p>
         <ol>
-          <li>
-            Harass, abuse, threaten, or incite violence towards any individual
-            or group.
-          </li>
           <li>
             Access our/the services in ways that exceed your authorization.
           </li>
@@ -61,10 +56,10 @@ export default () => {
           </li>
         </ol>
         <p style={{ marginTop: "1rem" }}>
-          Without limiting the foregoing, you will not transmit or post any
-          content anywhere on the Services that violates any laws. Copykat
-          absolutely does not tolerate engaging in activity that significantly
-          harms our Users/Serivce(s).
+          Without limiting the generality of the foregoing, you will not
+          transmit or post any content anywhere on the services that violates
+          any laws. Copykat absolutely does not tolerate engaging in activity
+          that significantly harms our Users/Serivce.
         </p>
       </div>
 
