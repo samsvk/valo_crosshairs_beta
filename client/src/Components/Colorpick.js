@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
+import useRender from "../Utils/useRender";
 
 export default () => {
   const Navigate = useNavigate();

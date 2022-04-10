@@ -24,11 +24,9 @@ export default () => {
 
     if (page) {
       getCrosshairs(page).then((res) => {
+        if (page > res.numberOfPages) Navigate("/");
         setCrosshairs(res);
         setCurrentPage(page);
-        if (page > res.numberOfPages) {
-          return Navigate("/");
-        }
       });
       return;
     }

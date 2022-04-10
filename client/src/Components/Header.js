@@ -15,6 +15,7 @@ export default React.memo(() => {
           <span>Just shipped beta 0.0.1</span>
           <MdKeyboardArrowRight size={20} style={{ alignItems: "center" }} />
         </div>
+        <Socials />
       </div>
       <header className="header">
         <div>
@@ -26,11 +27,8 @@ export default React.memo(() => {
           </p>
         </div>
         <div className="header__aside">
-          <Socials />
-          <div className="header__aside__bottom">
-            <Color />
-            <Search />
-          </div>
+          <Color />
+          <Search />
         </div>
       </header>
     </>
