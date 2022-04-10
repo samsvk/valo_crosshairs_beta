@@ -64,8 +64,7 @@ export default () => {
           Without limiting the foregoing, you will not transmit or post any
           content anywhere on the Services that violates any laws. Copykat
           absolutely does not tolerate engaging in activity that significantly
-          harms our Users/Serivce(s). We will resolve disputes in favor of
-          protecting our Users/Service(s) as a whole.
+          harms our Users/Serivce(s).
         </p>
       </div>
 
