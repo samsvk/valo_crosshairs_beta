@@ -1,10 +1,17 @@
+// $bg-color: #191a1b;
+// $sub-color: #48494b;
+// $sub-alt-color: #141516;
+// $main-color: #79a617;
+// $main-color-50: rgba(170, 196, 112, 0.08);
+// $error: #a61717;
+
 $bg-color: #191a1b;
-$text-color: #e7eae0;
+$main-color-50: RGBA(171, 255, 200, 0.08);
+$main-color: #43ffaf;
 $sub-color: #48494b;
 $sub-alt-color: #141516;
-$main-color: #79a617;
-$main-color-50: rgba(170, 196, 112, 0.08);
-$error: #a61717;
+$text-color: #e7eae0;
+$error: #ff5f5f;
 * {
   padding: 0;
   margin: 0;

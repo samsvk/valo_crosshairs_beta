@@ -20,7 +20,7 @@ export default () => {
 
   const [color, setColor] = React.useState({
     color: "brand",
-    hex: "79a617",
+    hex: "43ffaf",
   });
 
   return (

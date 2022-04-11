@@ -22,8 +22,8 @@ export default React.memo(() => {
           <h1>copykat</h1>
           <p>
             Perform better with the best crosshairs. Browse and find your
-            preference. The leightweight crosshair directory so you can see what
-            top professional players are using.
+            preference. Copycat is the leightweight crosshair directory so you
+            can use what everyone else is using.
           </p>
         </div>
         <div className="header__aside">
