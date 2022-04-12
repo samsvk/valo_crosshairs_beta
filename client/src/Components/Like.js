@@ -1,19 +1,26 @@
 import * as React from "react";
-import { getLikedCrosshairs } from "../Data/Api/actions";
+import { getLikedCrosshairs, getCrosshairs } from "../Data/Api/actions";
 
 export default ({ liked, setCrosshairs }) => {
+  const [show, setShow] = React.useState(true);
   return (
     <div className="liked">
       {liked.length === 0 && "Recommended crosshairs we think you'd like:"}
       {liked.length > 0 && (
         <>
-          Get your liked crosshairs -
           <button
-            onClick={() =>
-              getLikedCrosshairs(liked).then((res) => setCrosshairs(res))
-            }
+            className="liked__btn"
+            onClick={() => {
+              if (show) {
+                setShow(false);
+                getLikedCrosshairs(liked).then((res) => setCrosshairs(res));
+              } else {
+                setShow(true);
+                getCrosshairs(1).then((res) => setCrosshairs(res));
+              }
+            }}
           >
-            get liked
+            {show ? "View your liked crosshairs" : "Show all crosshairs"}
           </button>
         </>
       )}

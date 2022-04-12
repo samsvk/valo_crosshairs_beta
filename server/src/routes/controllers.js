@@ -63,7 +63,7 @@ const getLiked = async (req, res) => {
     const posts = await Crosshair.find({
       $or: [{ _id: ids }],
     });
-    console.log(posts);
+    // console.log(posts);
     res.json({ data: posts });
   } catch (error) {
     res.status(404).json({ message: error.message });
