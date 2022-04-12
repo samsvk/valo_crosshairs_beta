@@ -1,12 +1,13 @@
 import * as React from "react";
 import { copyToClipboard, sleep } from "../Utils/Utils";
 
-export default React.memo(({ crosshair, likeCrosshair }) => {
+export default React.memo(({ crosshair }) => {
   const [show, setShow] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
+
   return (
     <>
-      <div className="crosshair" onClick={() => likeCrosshair(crosshair._id)}>
+      <div className="crosshair">
         <div className={`crosshair__label ${show ? "show" : ""}`}>
           {!copied ? "Click to Copy ✍️" : "Copied! 😊"}
         </div>
