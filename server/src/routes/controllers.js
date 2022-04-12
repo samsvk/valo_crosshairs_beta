@@ -56,4 +56,6 @@ const searchCrosshair = async (req, res) => {
   }
 };
 
-export { getAll, searchCrosshair };
+const getLiked = async (req, res) => {};
+
+export { getAll, searchCrosshair, getLiked };
