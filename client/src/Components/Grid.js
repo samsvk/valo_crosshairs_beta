@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "../Utils/Utils";
 import { Paginate } from "./Paginate";
 import Header from "../Components/Header";
+import useRender from "../Utils/useRender";
+import useLocalstorage from "../Utils/useLocalstorage";
 
 export default () => {
   const Navigate = useNavigate();
@@ -13,6 +15,24 @@ export default () => {
   const search = query.get("search");
   const [currentPage, setCurrentPage] = React.useState();
   const [crosshairs, setCrosshairs] = React.useState([]);
+
+  const [liked, setLiked] = useLocalstorage("liked", []);
+  const likeCrosshair = React.useCallback(
+    (id) => {
+      setLiked((prevLiked) => {
+        return [...prevLiked, id];
+      });
+    },
+    [setLiked]
+  );
+  const removeLiked = React.useCallback(
+    (id) => {
+      setLiked((prevLiked) => {
+        return prevLiked.filter((l) => l !== id);
+      });
+    },
+    [setLiked]
+  );
 
   React.useEffect(() => {
     if (search) {
@@ -32,15 +52,23 @@ export default () => {
     }
   }, [page, search]);
 
-  // useRender("App");
   return (
     <div className="container">
       <Header />
+      {liked.map((l, i) => (
+        <div key={i} onClick={() => removeLiked(l)}>
+          {l}
+        </div>
+      ))}
       {crosshairs?.data?.length > 0 ? (
         <>
           <div className="crosshair__grid">
             {crosshairs?.data?.map((crosshair, index) => (
-              <Crosshair key={index} crosshair={crosshair} />
+              <Crosshair
+                key={index}
+                crosshair={crosshair}
+                likeCrosshair={likeCrosshair}
+              />
             ))}
           </div>
         </>
