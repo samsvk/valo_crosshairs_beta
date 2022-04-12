@@ -6,4 +6,4 @@ export const router = express.Router();
 router.get("/", getAll);
 // router.post("/create", createCrosshair);
 router.get("/search", searchCrosshair);
-router.get("/liked", getLiked);
+router.get("/liked/:liked", getLiked);

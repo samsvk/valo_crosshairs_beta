@@ -56,6 +56,18 @@ const searchCrosshair = async (req, res) => {
   }
 };
 
-const getLiked = async (req, res) => {};
+const getLiked = async (req, res) => {
+  const { liked } = req.params;
+  const ids = liked.split("-");
+  try {
+    const posts = await Crosshair.find({
+      $or: [{ _id: ids }],
+    });
+    console.log(posts);
+    res.json({ data: posts });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 export { getAll, searchCrosshair, getLiked };

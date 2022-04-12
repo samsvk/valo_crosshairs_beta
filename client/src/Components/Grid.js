@@ -1,5 +1,9 @@
 import * as React from "react";
-import { getCrosshairs, getCrosshairBySearch } from "../Data/Api/actions";
+import {
+  getCrosshairs,
+  getCrosshairBySearch,
+  getLikedCrosshairs,
+} from "../Data/Api/actions";
 import Crosshair from "./Crosshair";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "../Utils/Utils";
@@ -55,6 +59,7 @@ export default () => {
   return (
     <div className="container">
       <Header />
+      <button onClick={() => getLikedCrosshairs(liked)}>fetch liked</button>
       {liked.map((l, i) => (
         <div key={i} onClick={() => removeLiked(l)}>
           {l}
