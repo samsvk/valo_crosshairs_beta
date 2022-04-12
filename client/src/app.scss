@@ -120,6 +120,17 @@ body {
       margin-top: 1rem;
       margin-bottom: 1rem;
       color: $text-color;
+      &.like {
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        margin-left: 0.3rem;
+        padding-left: 0.3rem;
+        &:hover {
+          cursor: pointer;
+        }
+        & > svg {
+          vertical-align: middle;
+        }
+      }
     }
   }
   &__img {

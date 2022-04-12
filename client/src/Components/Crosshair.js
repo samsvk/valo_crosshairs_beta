@@ -1,7 +1,8 @@
 import * as React from "react";
 import { copyToClipboard, sleep } from "../Utils/Utils";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
-export default React.memo(({ crosshair }) => {
+export default React.memo(({ crosshair, likeCrosshair, removeLike }) => {
   const [show, setShow] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 
@@ -31,6 +32,12 @@ export default React.memo(({ crosshair }) => {
         </div>
         <div className="crosshair__details">
           <h5 className="crosshair__details__title">{crosshair.title}</h5>
+          <h4
+            className="crosshair__details__title like"
+            onClick={() => likeCrosshair(crosshair._id)}
+          >
+            <AiOutlineHeart />
+          </h4>
         </div>
       </div>
     </>

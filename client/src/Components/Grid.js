@@ -6,6 +6,7 @@ import { useQuery } from "../Utils/Utils";
 import { Paginate } from "./Paginate";
 import Header from "../Components/Header";
 import useRender from "../Utils/useRender";
+import useLocalStorage from "../Utils/useLocalstorage";
 
 export default () => {
   const Navigate = useNavigate();
@@ -14,6 +15,19 @@ export default () => {
   const search = query.get("search");
   const [currentPage, setCurrentPage] = React.useState();
   const [crosshairs, setCrosshairs] = React.useState([]);
+  const [liked, setLiked] = useLocalStorage("liked", []);
+
+  const likeCrosshair = React.useCallback((id) => {
+    setLiked((prevLiked) => {
+      return [...prevLiked, id];
+    });
+  }, []);
+
+  const removeLiked = React.useCallback((id) => {
+    setLiked((prevLiked) => {
+      return prevLiked.filter((l) => l !== id);
+    });
+  }, []);
 
   React.useEffect(() => {
     if (search) {
@@ -36,21 +50,11 @@ export default () => {
   return (
     <div className="container">
       <Header />
-      {crosshairs?.data?.length > 0 ? (
-        <>
-          <div className="crosshair__grid">
-            {crosshairs?.data?.map((crosshair, index) => (
-              <Crosshair key={index} crosshair={crosshair} />
-            ))}
-          </div>
-        </>
-      ) : (
-        <div className="noresults">
-          No results found using filter:{" "}
-          {search?.charAt(0).toUpperCase() + search?.slice(1)}
-        </div>
-      )}
-
+      <Crosshairs
+        crosshairs={crosshairs}
+        likeCrosshair={likeCrosshair}
+        removeLiked={removeLiked}
+      />
       <Paginate
         numberOfPages={crosshairs.numberOfPages}
         currentPage={currentPage || crosshairs.currentPage}
@@ -60,3 +64,29 @@ export default () => {
     </div>
   );
 };
+
+const Crosshairs = React.memo(
+  ({ crosshairs, search, likeCrosshair, removeLiked }) => {
+    return crosshairs?.data?.length > 0 ? (
+      <>
+        <div className="crosshair__grid">
+          {crosshairs?.data?.map((crosshair, index) => {
+            return (
+              <Crosshair
+                key={index}
+                crosshair={crosshair}
+                likeCrosshair={likeCrosshair}
+                removeLiked={removeLiked}
+              />
+            );
+          })}
+        </div>
+      </>
+    ) : (
+      <div className="noresults">
+        No results found using filter:{" "}
+        {search?.charAt(0).toUpperCase() + search?.slice(1)}
+      </div>
+    );
+  }
+);
