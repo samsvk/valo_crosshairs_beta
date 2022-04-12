@@ -6,6 +6,7 @@ import { useQuery } from "../Utils/Utils";
 import { Paginate } from "./Paginate";
 import Header from "../Components/Header";
 import useRender from "../Utils/useRender";
+import Like from "../Components/Like";
 import useLocalStorage from "../Utils/useLocalstorage";
 
 export default () => {
@@ -50,6 +51,7 @@ export default () => {
   return (
     <div className="container">
       <Header />
+      <Like liked={liked} setCrosshairs={setCrosshairs} />
       <Crosshairs
         crosshairs={crosshairs}
         likeCrosshair={likeCrosshair}

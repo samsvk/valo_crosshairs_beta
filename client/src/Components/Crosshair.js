@@ -18,6 +18,7 @@ export default React.memo(({ crosshair, likeCrosshair, removeLike }) => {
             onMouseEnter={() => setShow(true)}
             onMouseLeave={() => setShow(false)}
             onClick={() => {
+              likeCrosshair(crosshair._id);
               setCopied(true);
               copyToClipboard(crosshair.import);
               sleep(2000).then(() => {
@@ -32,12 +33,6 @@ export default React.memo(({ crosshair, likeCrosshair, removeLike }) => {
         </div>
         <div className="crosshair__details">
           <h5 className="crosshair__details__title">{crosshair.title}</h5>
-          <h4
-            className="crosshair__details__title like"
-            onClick={() => likeCrosshair(crosshair._id)}
-          >
-            <AiOutlineHeart />
-          </h4>
         </div>
       </div>
     </>

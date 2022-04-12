@@ -666,3 +666,21 @@ body {
     }
   }
 }
+
+.liked {
+  &__btn {
+    display: flex;
+    vertical-align: middle;
+    align-self: center;
+    justify-self: center;
+    @include Paragraph;
+    letter-spacing: 0.3px;
+    width: max-content;
+    font-size: 14px;
+    font-weight: 500;
+    & > span {
+      padding: 0 0.3rem 0 0.45rem;
+      align-self: center;
+    }
+  }
+}
