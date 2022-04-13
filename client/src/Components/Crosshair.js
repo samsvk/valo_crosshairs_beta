@@ -1,7 +1,7 @@
 import * as React from "react";
 import { copyToClipboard, sleep } from "../Utils/Utils";
 
-export default React.memo(({ crosshair }) => {
+export default React.memo(({ crosshair, likeCrosshair }) => {
   const [show, setShow] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 

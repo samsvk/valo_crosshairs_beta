@@ -14,6 +14,8 @@ export default () => {
   const [currentPage, setCurrentPage] = React.useState();
   const [crosshairs, setCrosshairs] = React.useState([]);
 
+  useRender("app");
+
   React.useEffect(() => {
     if (search) {
       getCrosshairBySearch(search).then((res) => {
@@ -31,11 +33,24 @@ export default () => {
       return;
     }
   }, [page, search]);
-
   return (
     <div className="container">
       <Header />
-      <Crosshairs crosshairs={crosshairs} />
+      {crosshairs?.data?.length > 0 ? (
+        <>
+          <div className="crosshair__grid">
+            {crosshairs?.data?.map((crosshair, index) => {
+              return <Crosshair key={index} crosshair={crosshair} />;
+            })}
+          </div>
+        </>
+      ) : (
+        <div className="noresults">
+          No results found using filter:{" "}
+          {search?.charAt(0).toUpperCase() + search?.slice(1)}
+        </div>
+      )}
+
       <Paginate
         numberOfPages={crosshairs.numberOfPages}
         currentPage={currentPage || crosshairs.currentPage}
@@ -45,20 +60,3 @@ export default () => {
     </div>
   );
 };
-
-const Crosshairs = React.memo(({ crosshairs, search }) => {
-  return crosshairs?.data?.length > 0 ? (
-    <>
-      <div className="crosshair__grid">
-        {crosshairs?.data?.map((crosshair, index) => {
-          return <Crosshair key={index} crosshair={crosshair} />;
-        })}
-      </div>
-    </>
-  ) : (
-    <div className="noresults">
-      No results found using filter:{" "}
-      {search?.charAt(0).toUpperCase() + search?.slice(1)}
-    </div>
-  );
-});
