@@ -14,7 +14,7 @@ export default () => {
   const [currentPage, setCurrentPage] = React.useState();
   const [crosshairs, setCrosshairs] = React.useState([]);
 
-  useRender("app");
+  // useRender("app");
 
   React.useEffect(() => {
     if (search) {
